@@ -29,6 +29,7 @@ mod terminal;
 mod theme;
 mod thumbnail;
 pub(crate) mod thumbnail_cache;
+mod tooltip_delay;
 mod top_bar_navigation;
 mod virtual_preview;
 mod window;
@@ -40,4 +41,5 @@ pub use window::{present, present_open, present_reveal};
 pub(crate) fn prepare_portal_ui() {
     let _theme = theme::ThemeManager::shared();
     window::load_styles();
+    tooltip_delay::install();
 }

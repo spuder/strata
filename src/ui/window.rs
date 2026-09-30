@@ -139,6 +139,7 @@ pub(super) fn present_target(
     crate::assets::register_icon_theme();
     let theme_manager = super::theme::ThemeManager::shared();
     load_styles();
+    super::tooltip_delay::install();
     tracing::debug!(
         elapsed_ms = present_started.elapsed().as_millis() as u64,
         "present theme and styles ready"
